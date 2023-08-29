@@ -1,0 +1,30 @@
+@import "../config.scss";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  appearance: none;
+  outline: none;
+  margin: to-rem(3);
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid;
+  border-radius: to-rem(3);
+}
+
+button {
+  border-color: transparent;
+}
+
+article {
+  max-width: 80ch;
+  margin: to-rem($line-unit) auto to-rem($line-unit) 0;
+}

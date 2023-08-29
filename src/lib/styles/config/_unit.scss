@@ -1,0 +1,9 @@
+$target-font-size: 18;
+$nav-target-minimized-width: 72;
+$nav-target-expanded-width: 272;
+
+$line-unit: 24;
+
+@function to-rem($n) {
+  @return calc($n / $target-font-size) * 1rem;
+}

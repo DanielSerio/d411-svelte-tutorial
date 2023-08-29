@@ -1,0 +1,33 @@
+@import "../config.scss";
+
+.boxes {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  margin-bottom: 48px;
+
+  .box {
+    border-radius: 2px;
+    border: 1px solid #676776;
+    height: 8px;
+    width: 8px;
+  }
+
+  &.nth-3n1 {
+    .box:nth-child(3n + 1) {
+      background: $brand;
+    }
+  }
+
+  &.nth-even {
+    .box:nth-child(even) {
+      background: $brand;
+    }
+  }
+
+  &.nth-odd {
+    .box:nth-child(odd) {
+      background: $brand;
+    }
+  }
+}

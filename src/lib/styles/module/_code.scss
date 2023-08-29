@@ -1,0 +1,29 @@
+@import "../config.scss";
+
+.code-block {
+  border: 1px solid mix($default, $brand);
+  overflow: hidden;
+  border-radius: to-rem(6);
+  margin-bottom: to-rem($line-unit * 2);
+}
+
+.inline-code {
+  display: inline;
+  padding: to-rem(3);
+  margin: 0 to-rem(3);
+  border: 1px solid rgba($light-shade, 0.08);
+  border-radius: to-rem(2);
+  font-size: to-rem(14);
+  background: rgba(black, 0.8);
+
+  &.url,
+  &.url.primary,
+  &.secondary {
+    color: lighten($dark-accent, 12%);
+  }
+
+  &.code,
+  &.primary {
+    color: $brand;
+  }
+}

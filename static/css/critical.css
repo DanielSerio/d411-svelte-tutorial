@@ -1,0 +1,260 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  appearance: none;
+  outline: none;
+  margin: 0.1666666667rem;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  border: 1px solid;
+  border-radius: 0.1666666667rem;
+}
+
+button {
+  border-color: transparent;
+}
+
+article {
+  max-width: 80ch;
+  margin: 1.3333333333rem auto 1.3333333333rem 0;
+}
+
+html {
+  font-size: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.3333333333rem;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 300;
+}
+
+h3,
+.h3 {
+  font-size: 1.6666666667rem;
+  line-height: 2rem;
+}
+
+h2,
+.h2 {
+  font-size: 2rem;
+  line-height: 2.6666666667rem;
+}
+
+h1,
+.h1 {
+  font-size: 2.3333333333rem;
+  line-height: 2.6666666667rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 1.3333333333rem;
+}
+
+body {
+  margin: 0;
+}
+
+.root-layout, html,
+body,
+body > div:first-of-type {
+  height: 0;
+  width: 100dvw;
+  max-width: 100%;
+  overflow: visible;
+  position: static;
+}
+.root-layout.load, html.load,
+body.load,
+body > div.load:first-of-type, .root-layout.nav-minimized > .layout, html.nav-minimized > .layout,
+body.nav-minimized > .layout,
+body > div.nav-minimized:first-of-type > .layout {
+  padding-left: 4rem;
+}
+.root-layout.load aside, html.load aside,
+body.load aside,
+body > div.load:first-of-type aside, .root-layout.nav-minimized > .layout aside, html.nav-minimized > .layout aside,
+body.nav-minimized > .layout aside,
+body > div.nav-minimized:first-of-type > .layout aside {
+  width: 4rem;
+}
+.root-layout.load nav .text, html.load nav .text,
+body.load nav .text,
+body > div.load:first-of-type nav .text, .root-layout.nav-minimized > .layout nav .text, html.nav-minimized > .layout nav .text,
+body.nav-minimized > .layout nav .text,
+body > div.nav-minimized:first-of-type > .layout nav .text {
+  width: 0;
+  overflow-x: hidden;
+  padding: 0;
+}
+.root-layout.nav-expanded > .layout, html.nav-expanded > .layout,
+body.nav-expanded > .layout,
+body > div.nav-expanded:first-of-type > .layout {
+  padding-left: 15.1111111111rem;
+}
+.root-layout.nav-expanded > .layout aside, html.nav-expanded > .layout aside,
+body.nav-expanded > .layout aside,
+body > div.nav-expanded:first-of-type > .layout aside {
+  width: 15.1111111111rem;
+}
+.root-layout.nav-expanded > .layout nav .text, html.nav-expanded > .layout nav .text,
+body.nav-expanded > .layout nav .text,
+body > div.nav-expanded:first-of-type > .layout nav .text {
+  width: auto;
+  overflow-x: visible;
+}
+.root-layout nav, html nav,
+body nav,
+body > div:first-of-type nav {
+  flex: 1;
+  overflow-x: hidden;
+}
+.root-layout nav .text, html nav .text,
+body nav .text {
+  white-space: nowrap;
+}
+.root-layout nav .nav-body, html nav .nav-body,
+body nav .nav-body {
+  flex: 3;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.root-layout nav, html nav,
+body nav,
+body > div:first-of-type nav,
+.root-layout nav .top,
+html nav .top,
+body nav .top {
+  display: flex;
+  flex-direction: column;
+}
+.root-layout nav .menu-area, html nav .menu-area,
+body nav .menu-area {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.root-layout nav .menu-area .menu-btn, html nav .menu-area .menu-btn,
+body nav .menu-area .menu-btn {
+  height: 2.6666666667rem;
+  width: 2.6666666667rem;
+  margin: 0.6666666667rem 0.6666666667rem 0.6666666667rem 0;
+  background: transparent;
+  font-size: 1.7777777778rem;
+  cursor: pointer;
+}
+.root-layout nav .top a, html nav .top a,
+body nav .top a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 3.3333333333rem;
+  color: rgba(237, 244, 244, 0.67);
+  text-decoration: none;
+}
+.root-layout nav .top a.active, html nav .top a.active,
+body nav .top a.active {
+  color: #ff8300;
+}
+.root-layout nav .top a .svg-wrap, html nav .top a .svg-wrap,
+body nav .top a .svg-wrap {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 0.8888888889rem;
+}
+.root-layout aside, html aside,
+body aside,
+body > div:first-of-type aside {
+  background: #0e1218;
+  border-right: 1px solid #243040;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  display: flex;
+  flex-basis: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: width 160ms ease;
+}
+
+.root-layout > .layout, html > .layout,
+body > .layout,
+body > div:first-of-type > .layout {
+  position: relative;
+  z-index: -100;
+  min-height: 100dvh;
+  transition: padding-left 160ms ease;
+}
+.root-layout > .layout, html > .layout,
+body > .layout,
+body > div:first-of-type > .layout, .root-layout > .layout > .page, html > .layout > .page,
+body > .layout > .page,
+body > div:first-of-type > .layout > .page {
+  display: flex;
+  flex-direction: column;
+}
+.root-layout > .layout > .page, html > .layout > .page,
+body > .layout > .page,
+body > div:first-of-type > .layout > .page {
+  flex: 1;
+  padding: 2.6666666667rem;
+}
+.root-layout > .layout .page-container, html > .layout .page-container,
+body > .layout .page-container,
+body > div:first-of-type > .layout .page-container {
+  max-width: 66.6666666667rem;
+  margin: 0 auto;
+  position: relative;
+}
+.root-layout > .layout .page-container section, html > .layout .page-container section,
+body > .layout .page-container section,
+body > div:first-of-type > .layout .page-container section {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+  max-width: calc(100dvw - 17.7777777778rem);
+}
+
+:root {
+  background-color: #19212c;
+  color: #d8dfe0;
+  font-weight: 300;
+}
+:root a {
+  color: #70c1ff;
+}
+:root a:visited {
+  color: #a8a8ff;
+}
+:root ::selection {
+  background: #ff8300;
+  color: black;
+}
+:root .viewed {
+  color: #ff8300;
+}
+:root strong {
+  color: #ba5160;
+}
+
+/*# sourceMappingURL=critical.css.map */

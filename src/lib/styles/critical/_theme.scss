@@ -1,0 +1,28 @@
+@import "../config.scss";
+
+:root {
+  background-color: $background-color;
+  color: $text-color;
+  font-weight: 300;
+
+  a {
+    color: $link-color;
+  }
+
+  a:visited {
+    color: $link-visited-color;
+  }
+
+  ::selection {
+    background: $brand;
+    color: black;
+  }
+
+  .viewed {
+    color: $brand;
+  }
+
+  strong {
+    color: $dark-accent;
+  }
+}

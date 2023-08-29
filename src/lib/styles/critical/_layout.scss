@@ -1,0 +1,145 @@
+@import "../config.scss";
+
+body {
+  margin: 0;
+}
+
+.root-layout {
+  height: 0;
+  width: 100dvw;
+  max-width: 100%;
+  overflow: visible;
+  position: static;
+
+  &.load,
+  &.nav-minimized > .layout {
+    padding-left: to-rem($nav-target-minimized-width);
+
+    aside {
+      width: to-rem($nav-target-minimized-width);
+    }
+    nav .text {
+      width: 0;
+      overflow-x: hidden;
+      padding: 0;
+    }
+  }
+  &.nav-expanded > .layout {
+    padding-left: to-rem($nav-target-expanded-width);
+
+    aside {
+      width: to-rem($nav-target-expanded-width);
+    }
+
+    nav .text {
+      width: auto;
+      overflow-x: visible;
+    }
+  }
+
+  nav {
+    flex: 1;
+    overflow-x: hidden;
+
+    .text {
+      white-space: nowrap;
+    }
+
+    .nav-body {
+      flex: 3;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    &,
+    .top {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-area {
+      display: flex;
+      flex-direction: row-reverse;
+
+      .menu-btn {
+        height: to-rem(48);
+        width: to-rem(48);
+        margin: to-rem(12) to-rem(12) to-rem(12) 0;
+        background: transparent;
+        font-size: to-rem(32);
+        cursor: pointer;
+      }
+    }
+
+    .top a {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      height: to-rem(60);
+      color: rgba($light-shade, 0.67);
+      text-decoration: none;
+
+      &.active {
+        color: $brand;
+      }
+
+      .svg-wrap {
+        height: to-rem(36);
+        width: to-rem(36);
+        margin-left: to-rem(16);
+      }
+    }
+  }
+
+  aside {
+    background: map-get($map: $ui, $key: background);
+    border-right: 1px solid map-get($map: $ui, $key: border);
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    display: flex;
+    flex-basis: 1;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: width 160ms ease;
+  }
+}
+
+html,
+body,
+body > div:first-of-type {
+  @extend .root-layout;
+}
+
+.root-layout > .layout {
+  position: relative;
+  z-index: -100;
+  min-height: 100dvh;
+  transition: padding-left 160ms ease;
+
+  &,
+  & > .page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  & > .page {
+    flex: 1;
+    padding: to-rem(48);
+  }
+
+  .page-container {
+    max-width: to-rem(1200);
+    margin: 0 auto;
+    position: relative;
+
+    section {
+      width: 100%;
+      position: relative;
+      overflow-x: hidden;
+      max-width: calc(100dvw - to-rem(272 + 48));
+    }
+  }
+}

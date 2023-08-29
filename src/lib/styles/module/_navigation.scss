@@ -1,0 +1,83 @@
+@import "../config.scss";
+
+.page-progress {
+  margin: to-rem(24) 0;
+  &,
+  .stop-block,
+  .sub-stops {
+    display: flex;
+  }
+
+  .stop-block {
+    gap: to-rem(6);
+    min-height: to-rem($line-unit * 1.5);
+    border-bottom: 1px solid rgba($default, 0.25);
+    text-decoration: none;
+    align-items: center;
+
+    &,
+    &:visited {
+      color: inherit;
+
+      &.viewed {
+        color: $brand;
+      }
+    }
+  }
+
+  .stop:last-child > .stop-block:last-child {
+    border-bottom: none;
+  }
+
+  .stop-block .bead {
+    font-size: to-rem(24);
+    margin: 0 to-rem(12) 0 to-rem(20);
+  }
+
+  &,
+  .sub-stops {
+    flex-direction: column;
+  }
+
+  .sub-stops {
+    .stop-block .bead {
+      font-size: to-rem(12);
+      margin: 0 to-rem(18) 0 to-rem(26);
+    }
+  }
+}
+
+.nav-expanded {
+  .sub-nav {
+    .logo {
+      margin: 0;
+      padding: 24px;
+
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+  }
+
+  .stop-block .text {
+    width: auto;
+    visibility: visible;
+  }
+}
+
+.nav-minimized {
+  .sub-nav figure.logo {
+    img {
+      visibility: hidden;
+      opacity: 0;
+      width: 0;
+      overflow: hidden;
+    }
+  }
+  .stop-block .text {
+    width: 0;
+    overflow-x: hidden;
+    visibility: hidden;
+  }
+}

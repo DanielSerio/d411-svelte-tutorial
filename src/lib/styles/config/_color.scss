@@ -1,0 +1,36 @@
+$yellow: #edf060;
+$green: #0aff85;
+$purple: #a8a8ff;
+
+$brand: #ff8300;
+$primary: #ff9c33;
+
+$light-accent: #35a7ff;
+$secondary: #70c1ff;
+
+$dark-accent: #ba5160;
+$accent: #ff8a9b;
+
+$dark-shade: #19212c;
+$light-shade: #edf4f4;
+
+$default: mix($dark-shade, $light-shade);
+
+$background-color: $dark-shade;
+$text-color: mix($light-shade, $dark-shade, 90%);
+$text-color-em: $light-shade;
+$text-color-muted: $default;
+$text-color-inverted: black;
+$link-color: $secondary;
+$link-visited-color: $purple;
+
+$input: (
+  border: mix($default, $dark-shade),
+  border-hover: $default,
+  focus: $primary
+);
+
+$ui: (
+  background: darken($dark-shade, 6%),
+  border: lighten($dark-shade, 6%)
+);
